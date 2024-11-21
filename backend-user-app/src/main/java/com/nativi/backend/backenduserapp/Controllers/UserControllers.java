@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/User")
+@CrossOrigin(origins = "http://127.0.0.1:5173/")
 public class UserControllers {
     @Autowired
     private UserService userService;

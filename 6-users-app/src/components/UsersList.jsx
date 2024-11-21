@@ -20,11 +20,11 @@ export const UsersList = () => {
             </thead>
             <tbody>
                 {
-                    users.map(({id, username, email }) => (
+                    users.map(({idUsurio, userName, email }) => (
                         <UserRow
-                            key={id}
-                            id={id}
-                            username={username}
+                            key={idUsurio}
+                            idUsuario={idUsurio}
+                            userName={userName}
                             email={email} />
                     ))
                 }

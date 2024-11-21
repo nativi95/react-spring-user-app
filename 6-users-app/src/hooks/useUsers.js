@@ -2,6 +2,7 @@ import { useReducer, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { usersReducer } from "../reducers/usersReducer";
+import {findAll} from "../services/userService";
 
 const initialUsers = [];
 
