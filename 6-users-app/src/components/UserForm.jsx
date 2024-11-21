@@ -8,7 +8,7 @@ export const UserForm = ({ userSelected, handlerCloseForm }) => {
     
     const [userForm, setUserForm] = useState(initialUserForm);
 
-    const { id, username, password, email } = userForm;
+    const { idUsuario, userName, password, email } = userForm;
 
     useEffect(() => {
         setUserForm({
@@ -28,9 +28,9 @@ export const UserForm = ({ userSelected, handlerCloseForm }) => {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        if (!username || (!password && id === 0) || !email) {
+        if (!userName || (!password && idUsuario === 0) || !email) {
             Swal.fire(
-                'Error de validacion',
+                'Error de validUsuarioacion',
                 'Debe completar los campos del formulario!',
                 'error'
             );
@@ -39,8 +39,8 @@ export const UserForm = ({ userSelected, handlerCloseForm }) => {
         }
         if (!email.includes('@')) {
             Swal.fire(
-                'Error de validacion email',
-                'El email debe ser valido, incluir un @!',
+                'Error de validUsuarioacion email',
+                'El email debe ser validUsuarioo, incluir un @!',
                 'error'
             );
             return;
@@ -60,12 +60,12 @@ export const UserForm = ({ userSelected, handlerCloseForm }) => {
         <form onSubmit={ onSubmit }>
             <input
                 className="form-control my-3 w-75"
-                placeholder="Username"
-                name="username"
-                value={ username}
+                placeholder="userName"
+                name="userName"
+                value={ userName}
                 onChange={onInputChange} />
             
-            { id > 0 || <input
+            { idUsuario > 0 || <input
                 className="form-control my-3 w-75"
                 placeholder="Password"
                 type="password"
@@ -79,14 +79,14 @@ export const UserForm = ({ userSelected, handlerCloseForm }) => {
                 name="email"
                 value={email}
                 onChange={onInputChange} />
-            <input type="hidden"
-                name="id"
-                value={id} />
+            <input type="hidUsuarioden"
+                name="idUsuario"
+                value={idUsuario} />
             
             <button
                 className="btn btn-primary"
                 type="submit">
-                {id > 0 ? 'Editar' : 'Crear'}
+                {idUsuario > 0 ? 'Editar' : 'Crear'}
             </button>
 
             {!handlerCloseForm || <button
